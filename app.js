@@ -40,10 +40,10 @@ class TaskSchedular {
                         }).catch(error => reject(error))
                     )
                 }
+                Promise.allSettled(promises).then((res) => {
+                    console.log(res);
+                }).catch(err => console.log(err));
             }
-            Promise.allSettled(promises).then((res) => {
-                console.log(res);
-            }).catch(err => console.log(err));
         }
     }
 }
